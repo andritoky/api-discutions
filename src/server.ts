@@ -22,7 +22,7 @@ app.use(cors({
 }))
 
 app.get('/', (req: Request , res: Response) => {
-  res.status(200).send("Welcome TypeMan Dev !")
+  res.status(200).send("API - TYPESCRIPT !")
 });
 
 app.use('/clients' , client_routers )
