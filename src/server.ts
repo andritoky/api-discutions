@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { Application , Request , Response} from 'express';
 import * as helmet from 'helmet'
-import {dbConnect} from './config/dbLocale'
+import {dbConnect} from './config/db'
 import {client_routers} from './api/routes/clients'
 import {users_routers} from './api/routes/users'
 import {log} from './config/logger'
