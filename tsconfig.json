@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+
+      "outDir" : "dist",
+      "target": "ES6",
+      "module": "CommonJS",
+      "strict" : true,
+      "alwaysStrict": true ,
+      "noEmitOnError" : true,
+      "noEmit" : false,
+      "inlineSourceMap": true ,
+      "noUnusedParameters": false,
+      "noUnusedLocals": true ,
+      "noImplicitReturns": true ,
+      "noFallthroughCasesInSwitch": true,
+    //"declaration" : false,
+    },
+    "include": [
+        "src/**/*.tS"
+    ],
+    "lib": ["es2015"]
+  }
