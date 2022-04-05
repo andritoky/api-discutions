@@ -10,7 +10,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 
 const app: Application = express();
-let port = 3000
+let port = process.env.PORT || 3000
 
 app.use(helmet.noSniff())
 app.use(express.static('public'));    
