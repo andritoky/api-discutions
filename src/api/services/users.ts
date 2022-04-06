@@ -56,7 +56,7 @@ export let sendEmail = async (email: string , sujet: string , nom: any , link: s
         service: 'gmail',
         auth: {
           user: 'randriamampionona9@gmail.com',
-          pass: 'lantoniaina'
+          pass: '#Lantoniaina9'
         },
         tls:{
           rejectUnauthorized:false
