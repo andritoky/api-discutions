@@ -30,7 +30,7 @@ app.use('/users' , users_routers )
 
 app.listen(port, () => {
   dbConnect()
-  log.info('Server run on port 12 :'+ port);
+  log.info('Server run on port :'+ port);
 }); 
 
 

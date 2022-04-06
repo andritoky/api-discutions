@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose'
-
+import {log} from './logger'
 
 let uri = "mongodb+srv://toky:lantoniaina@cluster0.sh3ga.mongodb.net/monbd?retryWrites=true&w=majority";
 export let dbConnect = function () {
@@ -9,10 +9,10 @@ export let dbConnect = function () {
     try {
         let connection = mongoose.connection
         connection.once("open" , ()  => {
-            console.log('connection Base de donnée succes !')
+            log.info('connection Base de donnée online succes !')
         })
     }catch(e: any){
-        console.log(e.message)
+        log.error(e.message)
     }
     
 }

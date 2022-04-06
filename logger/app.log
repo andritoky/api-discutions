@@ -1,0 +1,16 @@
+{"level":"info","message":"Server run on port 12 :3000"}
+{"level":"info","message":"connection Base de donnée online succes !"}
+{"level":"info","message":"test"}
+{"level":"error","message":"test"}
+{"level":"info","message":"Server run on port 12 :3000"}
+{"level":"info","message":"connection Base de donnée online succes !"}
+[info] - Server run on port 12 :3000]
+[info] - connection Base de donnée online succes !]
+[info] - Server run on port 12 :3000
+[info] - connection Base de donnée online succes !
+[info   ] - Server run on port :3000
+[info   ] - connection Base de donnée online succes !
+[INFO   ] - Server run on port :3000
+[INFO   ] - connection Base de donnée online succes !
+2022-04-06T05:11:03.203Z [INFO   ] - Server run on port :3000
+2022-04-06T05:11:08.658Z [INFO   ] - connection Base de donnée online succes !
