@@ -22,7 +22,7 @@ app.use(cors({
 }))
 
 app.get('/', (req: Request , res: Response) => {
-  res.status(200).send("API - COUCOU SATOMI ! COUCOU TOUKY")
+  res.status(200).send("API - TYPESCRIPTE - WITH LOGGER")
 });
 
 app.use('/clients' , client_routers )
