@@ -24,8 +24,9 @@ export let add  = async (req: Request , res: Response ) => {
         
         let id = add._id.toString()
         let sujet = "App Verification User"
-        let link = "http://localhost:3000/users/verify/" + id + ""
-        services.sendEmail(req.body.email , sujet , req.body.nom , link)
+        // let link = "http://localhost:3000/users/verify/" + id + ""
+        let linkOnline = "https://api-typescritpe.herokuapp.com/users/verify/" + id + ""
+        services.sendEmail(req.body.email , sujet , req.body.nom , linkOnline)
 
         add?res.status(200).json({status : 'succes' , message : designation + req.body.nom +' bien ajouter'})
         :res.status(400).json({status : 'fail' , message : 'ajout fail'})
