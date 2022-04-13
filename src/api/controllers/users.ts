@@ -8,10 +8,23 @@ export let liste  = async (req: Request , res: Response ) => {
     res.status(200).send(liste)
 }
 
+export let liste_users  = async (req: Request , res: Response ) => {
+    let userId = req.params.user_id
+    let liste = await services.find()
+    let data = liste.filter(user => user.id !== userId)
+    res.status(200).send(data)
+}
+
 export let findOne  = async (req: Request , res: Response ) => {
     let find = await services.findOne(req.params.id)
     res.status(200).send(find)
 }
+
+export let deleteOne  = async (req: Request , res: Response ) => {
+     await services.deleteOne(req.params.id)
+     res.status(200).send('Delete:'+ req.params.id)
+}
+
 
 export let add  = async (req: Request , res: Response ) => {
     let verify_double = await services.findOneByNom(req.body.nom)

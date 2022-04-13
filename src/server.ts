@@ -4,15 +4,20 @@ import * as helmet from 'helmet'
 import {dbConnect} from './config/db'
 import {client_routers} from './api/routes/clients'
 import {users_routers} from './api/routes/users'
+import {authentification_routers} from './api/routes/authentification'
+import {discutions_routers} from './api/routes/discutions'
 import {log} from './config/logger'
-
+import { verifyHeaders } from './api/helpers/verifyHeaders';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 
-const app: Application = express();
-let port = process.env.PORT || 3000
 
-app.use(helmet.noSniff())
+const app: Application = express();
+let port = process.env.PORT || 4000
+
+// app.use('/', verifyHeaders)
+// app.use(helmet.noSniff())
+
 app.use(express.static('public'));    
 app.use(bodyParser.urlencoded({ extended: true , limit: '25mb'}))  
 app.use(bodyParser.json({limit: '25mb'})) 
@@ -27,6 +32,8 @@ app.get('/', (req: Request , res: Response) => {
 
 app.use('/clients' , client_routers )
 app.use('/users' , users_routers )
+app.use('/auth' , authentification_routers )
+app.use('/discutions' , discutions_routers )
 
 app.listen(port, () => {
   dbConnect()

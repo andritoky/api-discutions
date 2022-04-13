@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.discutions_routers = void 0;
+const express = require("express");
+const controllers = require("../controllers/discutions");
+exports.discutions_routers = express.Router();
+exports.discutions_routers.post('/new-discution', controllers.add_discution);
+exports.discutions_routers.get('/all-discution', controllers.get_all_discution);
+exports.discutions_routers.get('/delete/:id', controllers.delete_discution);
+exports.discutions_routers.post('/new-message/:conversation_id', controllers.add_message);
+exports.discutions_routers.get('/my-discution/:id', controllers.get_my_discution);
+exports.discutions_routers.post('/verify-discution/', controllers.post_verify_duscution);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGlzY3V0aW9ucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9hcGkvcm91dGVzL2Rpc2N1dGlvbnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsbUNBQW1DO0FBQ25DLHlEQUF3RDtBQUU3QyxRQUFBLGtCQUFrQixHQUFHLE9BQU8sQ0FBQyxNQUFNLEVBQUUsQ0FBQTtBQUVoRCwwQkFBa0IsQ0FBQyxJQUFJLENBQUMsZ0JBQWdCLEVBQUksV0FBVyxDQUFDLGFBQWEsQ0FBQyxDQUFBO0FBQ3RFLDBCQUFrQixDQUFDLEdBQUcsQ0FBQyxnQkFBZ0IsRUFBRyxXQUFXLENBQUMsaUJBQWlCLENBQUMsQ0FBQTtBQUN4RSwwQkFBa0IsQ0FBQyxHQUFHLENBQUMsYUFBYSxFQUFHLFdBQVcsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFBO0FBRXBFLDBCQUFrQixDQUFDLElBQUksQ0FBQywrQkFBK0IsRUFBRyxXQUFXLENBQUMsV0FBVyxDQUFDLENBQUE7QUFDbEYsMEJBQWtCLENBQUMsR0FBRyxDQUFDLG1CQUFtQixFQUFHLFdBQVcsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFBO0FBQzFFLDBCQUFrQixDQUFDLElBQUksQ0FBQyxvQkFBb0IsRUFBRyxXQUFXLENBQUMscUJBQXFCLENBQUMsQ0FBQSJ9

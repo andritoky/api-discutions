@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.authentification_routers = void 0;
+const express = require("express");
+const controllers = require("../controllers/authentification");
+exports.authentification_routers = express.Router();
+exports.authentification_routers.post('/login', controllers.login);
+exports.authentification_routers.get('/logout', controllers.logout);
+exports.authentification_routers.get('/verify-cookie', controllers.verify_cookie);
+exports.authentification_routers.post('/verify-user-token', controllers.verify_user_token);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXV0aGVudGlmaWNhdGlvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9hcGkvcm91dGVzL2F1dGhlbnRpZmljYXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsbUNBQW1DO0FBQ25DLCtEQUE4RDtBQUVuRCxRQUFBLHdCQUF3QixHQUFHLE9BQU8sQ0FBQyxNQUFNLEVBQUUsQ0FBQTtBQUV0RCxnQ0FBd0IsQ0FBQyxJQUFJLENBQUMsUUFBUSxFQUFFLFdBQVcsQ0FBQyxLQUFLLENBQUMsQ0FBQTtBQUMxRCxnQ0FBd0IsQ0FBQyxHQUFHLENBQUMsU0FBUyxFQUFFLFdBQVcsQ0FBQyxNQUFNLENBQUMsQ0FBQTtBQUMzRCxnQ0FBd0IsQ0FBQyxHQUFHLENBQUMsZ0JBQWdCLEVBQUUsV0FBVyxDQUFDLGFBQWEsQ0FBQyxDQUFBO0FBQ3pFLGdDQUF3QixDQUFDLElBQUksQ0FBQyxvQkFBb0IsRUFBRSxXQUFXLENBQUMsaUJBQWlCLENBQUMsQ0FBQSJ9

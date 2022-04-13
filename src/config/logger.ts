@@ -14,9 +14,3 @@ export let log = createLogger({
     ]
 })
 
-// export let log = logger.pino({
-//     base: {
-//         pid:false
-//     },
-//     timestamp: () => ',"time":"'+ dayjs().format() +'"'
-// })

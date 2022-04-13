@@ -13,7 +13,7 @@ export let find = async () => {
 export let findOne = async (id: number | string) => {
     try{
         console.log('id' , id)
-        let find = await mydb.find({_id : id})
+        let find = await mydb.findOne({_id : id})
         return find
     }catch(e:any){
         console.log(e.message)
@@ -36,6 +36,11 @@ export let findOneByNom = async (nom: string) => {
     console.log(designation , nom)
     let find_nom = await mydb.find({nom : nom})
     return find_nom
+}
+
+export let deleteOne = async (id: string) => {
+    await mydb.findByIdAndDelete({_id : id})
+    console.log("User delete :" , id);
 }
 
 export let add = async (data: DataUsers) => {
