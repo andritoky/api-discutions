@@ -26,7 +26,7 @@ app.use(cors({
 }))
 
 app.get('/', (req: Request , res: Response) => {
-  res.status(200).send("API - TYPESCRIPTE - WITH LOGGER")
+  res.status(200).send("Welcome api-discutions")
 });
 
 app.use('/users' , users_routers )
