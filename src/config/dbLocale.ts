@@ -33,11 +33,11 @@ function changeStream () {
 
 let uri = ''+ process.env.URI_DB_LOCALE +'' ;
 export let dbConnect = function () {
-    mongoose.connect(uri,{
-        retryWrites : true ,
-        w : 'majority'
-    })
     try {
+        mongoose.connect(uri,{
+            retryWrites : true ,
+            w : 'majority'
+        })
         let connection = mongoose.connection
             connection.once("open" , ()  => {
             log.info('DB Local connexion succes !')

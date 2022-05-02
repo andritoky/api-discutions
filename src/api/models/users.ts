@@ -15,6 +15,9 @@ let usersShema = new Schema({
     password : {
         type : String ,
     },
+    profile : {
+        type : String,
+    },
     verify : {
         type : Boolean,
     }

@@ -1,4 +1,5 @@
 import { Request , Response , NextFunction} from 'express';
+import { sendError } from '../helpers/sendResponse';
 
 export let validation = (shema: any) => async (req: Request , res: Response , next: NextFunction) => {
    try{
@@ -6,6 +7,6 @@ export let validation = (shema: any) => async (req: Request , res: Response , ne
        next()
    }
    catch(e: any){
-       res.status(400).send(e.message)
+       sendError(res , e.message)
    }
 }

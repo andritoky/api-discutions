@@ -10,10 +10,21 @@ export let find = async () => {
     return liste
 }
 
-export let findOne = async (id: number | string) => {
+export let findOne = async (id: number | string ) => {
     try{
         console.log('id' , id)
         let find = await mydb.findOne({_id : id})
+        return find
+    }catch(e:any){
+        console.log(e.message)
+        return false
+    }   
+}
+
+export let search = async (data: string) => {
+    try{
+        console.log('search : ' , data)
+        let find = await mydb.findOne({nom: { $regex: '.*' + data + '.*'} })
         return find
     }catch(e:any){
         console.log(e.message)
@@ -43,12 +54,14 @@ export let deleteOne = async (id: string) => {
     console.log("User delete :" , id);
 }
 
-export let add = async (data: DataUsers) => {
+export let add = async (data: DataUsers , image_name: any) => {
+    console.log("user ajout !");
     let nouveau = new mydb({
         nom : data.nom ,
         contact : data.contact ,
         email : data.email,
         password : data.password,
+        profile : image_name,
         verify : false
     })
     let add = await mydb.create(nouveau)

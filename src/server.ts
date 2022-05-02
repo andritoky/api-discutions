@@ -2,7 +2,6 @@ import * as express from 'express';
 import { Application , Request , Response} from 'express';
 import * as helmet from 'helmet'
 import {dbConnect} from './config/db'
-import {client_routers} from './api/routes/clients'
 import {users_routers} from './api/routes/users'
 import {authentification_routers} from './api/routes/authentification'
 import {discutions_routers} from './api/routes/discutions'
@@ -30,13 +29,16 @@ app.get('/', (req: Request , res: Response) => {
   res.status(200).send("API - TYPESCRIPTE - WITH LOGGER")
 });
 
-app.use('/clients' , client_routers )
 app.use('/users' , users_routers )
 app.use('/auth' , authentification_routers )
 app.use('/discutions' , discutions_routers )
 
 app.listen(port, () => {
-  dbConnect()
+  try{
+    dbConnect()
+  }catch(e){
+    log.info('Connection DB Fail !');
+  }
   log.info('Server run on port :'+ port);
 }); 
 

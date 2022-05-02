@@ -10,14 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validation = void 0;
+const sendResponse_1 = require("../helpers/sendResponse");
 let validation = (shema) => (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield shema.validate(req.body);
         next();
     }
     catch (e) {
-        res.status(400).send(e.message);
+        (0, sendResponse_1.sendError)(res, e.message);
     }
 });
 exports.validation = validation;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidmFsaWRhdGlvbnNNaWRkbGV3YXJlcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9hcGkvbWlkZGxld2FyZXMvdmFsaWRhdGlvbnNNaWRkbGV3YXJlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFFTyxJQUFJLFVBQVUsR0FBRyxDQUFDLEtBQVUsRUFBRSxFQUFFLENBQUMsQ0FBTyxHQUFZLEVBQUcsR0FBYSxFQUFHLElBQWtCLEVBQUUsRUFBRTtJQUNqRyxJQUFHO1FBQ0MsTUFBTSxLQUFLLENBQUMsUUFBUSxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQTtRQUM5QixJQUFJLEVBQUUsQ0FBQTtLQUNUO0lBQ0QsT0FBTSxDQUFNLEVBQUM7UUFDVCxHQUFHLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLENBQUE7S0FDbEM7QUFDSixDQUFDLENBQUEsQ0FBQTtBQVJVLFFBQUEsVUFBVSxjQVFwQiJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidmFsaWRhdGlvbnNNaWRkbGV3YXJlcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9hcGkvbWlkZGxld2FyZXMvdmFsaWRhdGlvbnNNaWRkbGV3YXJlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFDQSwwREFBb0Q7QUFFN0MsSUFBSSxVQUFVLEdBQUcsQ0FBQyxLQUFVLEVBQUUsRUFBRSxDQUFDLENBQU8sR0FBWSxFQUFHLEdBQWEsRUFBRyxJQUFrQixFQUFFLEVBQUU7SUFDakcsSUFBRztRQUNDLE1BQU0sS0FBSyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUE7UUFDOUIsSUFBSSxFQUFFLENBQUE7S0FDVDtJQUNELE9BQU0sQ0FBTSxFQUFDO1FBQ1QsSUFBQSx3QkFBUyxFQUFDLEdBQUcsRUFBRyxDQUFDLENBQUMsT0FBTyxDQUFDLENBQUE7S0FDN0I7QUFDSixDQUFDLENBQUEsQ0FBQTtBQVJVLFFBQUEsVUFBVSxjQVFwQiJ9

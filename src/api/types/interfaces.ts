@@ -9,5 +9,6 @@ export interface DataUsers  {
     contact : number ,
     email : string,
     password : string,
+    profile : string,
     verify : boolean 
 }

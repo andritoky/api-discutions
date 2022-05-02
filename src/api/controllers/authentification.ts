@@ -2,6 +2,7 @@ import { Request , Response , NextFunction} from 'express';
 import {User} from '../models/users'
 import {loginJWT , sendToken ,decryptJWT } from '../services/authentification'
 import * as bcrypt from 'bcrypt'
+import { sendError } from '../helpers/sendResponse';
 
 
 export let login = async (req: Request , res: Response ) => {
@@ -15,13 +16,11 @@ export let login = async (req: Request , res: Response ) => {
             sendToken(user , req , res)
         }
         else{
-            res.json({status:'error' , user : false , message:'password incorrect'})
+            sendError(res ,'password incorrect' )
         }
-
     }else{
-        return res.json({status:'error' , user:false , message:'no user with this email'})
+        return sendError(res ,'no user with this email' )
     }
-    
 }
 
 export let logout =  async (req: Request , res: Response) => {
@@ -54,10 +53,10 @@ export let verify_cookie = async (req: Request , res: Response ) => {
                     data : token
                 })
                 console.log(user);
-            }else{res.json({status:'error'})}
-    
+            }else{
+                sendError(res,'Request Cookies Fail')
+            }
             console.log('verifyCookie decode',decode);
-            
         } 
         if(!req.cookies.jwt || req.cookies.jwt ==='expiredtoken'){
             res.status(401).json({
@@ -78,10 +77,12 @@ export let verify_user_token = async (req: Request , res: Response ) => {
         let user_token =  req.body.token
         let decode: any = await decryptJWT(user_token)
         let decodeID = decode.id
-            let user = await User.findById(decodeID)
-            if(user){
-                res.json({ data : user })
-            }else{res.json({status:'error'})}
+        let user = await User.findById(decodeID)
+        if(user){
+            res.json({ data : user })
+        }else{
+            sendError(res,'Verify token FAIL')
+        }
     }
     catch(e: any){console.log('ereur', e.message)}
 }
